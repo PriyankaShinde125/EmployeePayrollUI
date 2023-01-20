@@ -65,15 +65,23 @@
                 <div>
                     <input type="checkbox" id="hr" name="department" value="hr">
                     <label for="department" class="text">Hr</label>
-                    <input type="checkbox" id="hr" name="department" value="sales">
+                    <input type="checkbox" id="sales" name="department" value="sales">
                     <label for="department" class="text">Sales</label>
-                    <input type="checkbox" id="hr" name="department" value="finance">
+                    <input type="checkbox" id="finance" name="department" value="finance">
                     <label for="department" class="text">Finance</label>
-                    <input type="checkbox" id="hr" name="department" value="engineers">
+                    <input type="checkbox" id="engineers" name="department" value="engineers">
                     <label for="department" class="text">Engineers</label>
-                    <input type="checkbox" id="hr" name="department" value="others">
+                    <input type="checkbox" id="others" name="department" value="others">
                     <label for="department" class="text">Others</label>
                 </div>
+            </div>
+            <div class="row-content">
+                <label for="salaryrange" class="label text">Salary</label>
+
+                <input class="input" type="range" id="salaryrange" name="salaryrange" min="3000000" max="5000000"
+                    step="100" value="4000000">
+                <output class="salary-output text" for="salary">400000</output>
+
             </div>
         </form>
     </div>
