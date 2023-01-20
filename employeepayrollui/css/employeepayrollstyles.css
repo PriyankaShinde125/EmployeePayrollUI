@@ -46,7 +46,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0px sloid green;
+    border: 0px solid green;
 }
 
 .form {
@@ -106,7 +106,7 @@ label {
     flex-direction: row;
 }
 
-.profile-radio-content-label {
+.profile-radio-content>label {
     display: flex;
     flex-direction: row;
     align-items: center;
