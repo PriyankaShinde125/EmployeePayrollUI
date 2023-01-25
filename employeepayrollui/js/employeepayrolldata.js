@@ -1,14 +1,5 @@
 class EmployeePayrollData {
 
-    constructor() {
-        this._id = EmployeePayrollData.incrementId()
-    }
-
-    static incrementId() {
-        if (!this.latestId) this.latestId = 1
-        else this.latestId++
-        return this.latestId
-    }
     // getter and setter method
     get id() {
         return this._id;
