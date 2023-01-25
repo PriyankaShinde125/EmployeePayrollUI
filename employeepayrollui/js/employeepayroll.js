@@ -23,7 +23,7 @@ nameText.addEventListener('input' , function() {
 const save = () =>{
     try {
         let employeePayrollData = createEmployeePayroll();
-        console.log(employeePayrollData);
+        createAndUpdateStorage(employeePayrollData);
     } catch (e) {
         return e;
     }
@@ -56,4 +56,16 @@ const getSelectedValues = (propertyValue) => {
         if(item.checked) setItems.push(item.value);
     });
     return setItems;
+}
+
+function createAndUpdateStorage(employeePayrollData){
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+
+    if(employeePayrollList != undefined){
+        employeePayrollList.push(employeePayrollData);
+    }else{
+        employeePayrollList = [employeePayrollData];
+    }
+    alert(JSON.stringify(employeePayrollList));
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
 }
