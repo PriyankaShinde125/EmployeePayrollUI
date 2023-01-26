@@ -1,12 +1,16 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+    empPayrollData = getDataFromLocalStorage();
+    document.querySelector('.emp-count').textContent = empPayrollData.length;
     createInnerHtml()
 });
 
-const createInnerHtml = () => {
+const getDataFromLocalStorage = () => {
+    return localStorage.getItem("EmployeePayrollList") ? JSON.parse(localStorage.getItem("EmployeePayrollList")) : [];
+}
 
+const createInnerHtml = () => {
     const headerHtml = "<th></th><th>Name</th><th>Gender</th><th>Department</th>" +
         "<th>Salary</th><th>Start Date</th><th>Actions</th>";
-    let empPayrollData = createEmployeePayrollJson();
     let innerHtml = `${headerHtml}`;
     for (const empData of empPayrollData) {
         innerHtml = `${innerHtml}
@@ -20,7 +24,7 @@ const createInnerHtml = () => {
     <td>&#x20B9; ${empData._salary}</td>
     <td>${empData._startDate}</td>
     <td>
-        <img id="1" onclick="remove(${empData._id})" src="../assets/logos/delete.jpg"  alt="delete" >
+        <img id="1" onclick="remove(${empData._id})" src="../assets/logos/delete.jpg" alt="delete" >
         <img id="1" onclick="update(${empData._id})" src="../assets/logos/edit.jpg" alt="edit" >
     </td>
     </tr>`

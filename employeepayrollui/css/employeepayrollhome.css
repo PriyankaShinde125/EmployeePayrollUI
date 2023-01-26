@@ -124,7 +124,8 @@ body {
     min-width: 800px;
 }
 
-td,th {
+td,
+th {
     text-align: left;
     padding: 5px 8px;
 }
@@ -143,7 +144,7 @@ th {
 tr:not(:first-child) {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 2px solid #E3E3E3;
-    border-left: none; 
+    border-left: none;
     border-right: none;
 }
 
