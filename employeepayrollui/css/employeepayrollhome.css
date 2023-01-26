@@ -119,7 +119,7 @@ body {
 
 .table {
     width: 100%;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0 15px;
     min-width: 800px;
 }
@@ -141,9 +141,10 @@ th {
 }
 
 tr:not(:first-child) {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    border: 1px solid #e3e3e3;
-    border-radius: 3px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #E3E3E3;
+    border-left: none; 
+    border-right: none;
 }
 
 td {
