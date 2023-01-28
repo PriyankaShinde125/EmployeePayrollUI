@@ -27,6 +27,8 @@ body {
 .logo-content img {
     padding: 7.75px;
     border: solid 0px #42515f;
+    width: 60px;
+    height: 60px;
 }
 
 .emp-text {
@@ -139,7 +141,7 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url(../assets/logos/dropdown-arrow.svg)  97% / 25% no-repeat;
+    background: url(../assets/logos/dropdown-arrow.svg) 97% / 25% no-repeat;
 }
 
 .buttonParent {
