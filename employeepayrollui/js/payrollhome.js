@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     empPayrollData = getDataFromLocalStorage();
     document.querySelector('.emp-count').textContent = empPayrollData.length;
     createInnerHtml()
+    localStorage.removeItem('editEmp');
 });
 
 const getDataFromLocalStorage = () => {
