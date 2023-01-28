@@ -77,3 +77,13 @@ const createEmployeePayrollJson = () => {
     ];
     return empPayrollListLocal;
 }
+
+const remove = (id) => {
+    let emp = empPayrollData.find(tempData => tempData._id==id);
+    if(!emp) return;
+    let index = empPayrollData.map(tempData => tempData._id)
+                .indexOf(emp._id);
+    empPayrollData.splice(index,1);
+    document.querySelector('.emp-count').textContent = empPayrollData.length;
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(empPayrollData));
+}
