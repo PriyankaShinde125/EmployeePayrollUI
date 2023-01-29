@@ -21,8 +21,28 @@ window.addEventListener('DOMContentLoaded', (event) => {
             errorText.textContent = "";
         }
     });
+
     checkForUpdate();
+
+    const date = document.querySelector('#date');
+    const dateError = document.querySelector('.date-error');
+    date.addEventListener('input', function() {
+        const startDate = new Date(getInputValueById('#day')+" "+
+                                            getInputValueById('#month')+" "+
+                                            getInputValueById('#year'));
+        try {
+            (new EmployeePayrollData()).startDate = startDate;
+            dateError.textContent = "";
+        } catch (e) {
+            dateError.textContent = e;
+
+        }
+    });
 });
+
+const getInputValueById = (id) => {
+    return document.querySelector(id).value;
+}
 
 const save = () => {
     try {

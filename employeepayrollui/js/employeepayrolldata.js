@@ -1,9 +1,8 @@
 class EmployeePayrollData {
-
-    // getter and setter method
     get id() {
         return this._id;
     }
+
     set id(id) {
         this._id = id;
     }
@@ -11,6 +10,7 @@ class EmployeePayrollData {
     get name() {
         return this._name;
     }
+
     set name(name) {
         let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
         if (nameRegex.test(name)) {
@@ -22,6 +22,7 @@ class EmployeePayrollData {
     get profilePic() {
         return this._profilePic;
     }
+
     set profilePic(profilePic) {
         this._profilePic = profilePic;
     }
@@ -29,6 +30,7 @@ class EmployeePayrollData {
     get gender() {
         return this._gender;
     }
+
     set gender(gender) {
         this._gender = gender;
     }
@@ -36,6 +38,7 @@ class EmployeePayrollData {
     get department() {
         return this._department;
     }
+
     set department(department) {
         this._department = department;
     }
@@ -43,6 +46,7 @@ class EmployeePayrollData {
     get salary() {
         return this._salary;
     }
+
     set salary(salary) {
         this._salary = salary;
     }
@@ -57,8 +61,20 @@ class EmployeePayrollData {
     get startDate() {
         return this._startDate;
     }
+
     set startDate(startDate) {
-        this._startDate = startDate;
+        let newDate = startDate.getTime();
+        let newYr = startDate.getFullYear();
+        console.log(newYr);
+        console.log("new date "+newDate);
+        let currentDate = new Date().getTime();
+        console.log("current date"+currentDate);
+        if (newDate > currentDate) throw 'Start Date is a Future Date!';
+        var diff = Math.abs(currentDate - newDate);
+        console.log("difference"+diff);
+        if (diff / (1000 * 3600 * 24) > 30)
+         throw 'Start Date is beyond 30 Days';
+        this._startDate = newDate;
     }
 
     toString() {
