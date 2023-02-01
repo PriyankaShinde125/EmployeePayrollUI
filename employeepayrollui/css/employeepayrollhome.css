@@ -27,6 +27,8 @@ body {
 .logo-content img {
     padding: 7.75px;
     border: solid 0px #42515f;
+    width: 60px;
+    height: 60px;
 }
 
 .emp-text {

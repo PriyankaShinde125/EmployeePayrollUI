@@ -87,4 +87,5 @@ const remove = (id) => {
     empPayrollData.splice(index,1);
     document.querySelector('.emp-count').textContent = empPayrollData.length;
     localStorage.setItem("EmployeePayrollList", JSON.stringify(empPayrollData));
+    window.location.reload();
 }

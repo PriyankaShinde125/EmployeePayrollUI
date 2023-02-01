@@ -74,15 +74,15 @@ class EmployeePayrollData {
         console.log("difference"+diff);
         if (diff / (1000 * 3600 * 24) > 30)
          throw 'Start Date is beyond 30 Days';
-        this._startDate = newDate;
+        this._startDate = startDate;
     }
 
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this.startDate ? "undefined" :
             this.startDate.toLocaleDateString("en-GB");
-        return "id=" + this.id + ", name=" + this.name + ", gender=" + this.gender
-            + ", profilePic=" + this.profilePic + ", department=" + this.department
-            + ", salary=" + this.salary + ", startDate=" + empDate + ", note=" + this.note;
+        return "id=" + this._id + ", name=" + this._name + ", gender=" + this._gender
+            + ", profilePic=" + this._profilePic + ", department=" + this._department
+            + ", salary=" + this._salary + ", startDate=" + empDate + ", note=" + this._note;
     }
 }
